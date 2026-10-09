@@ -2,7 +2,7 @@
   "name": "yserver-vscode",
   "displayName": "yserver",
   "description": "Work with your own yserver from VS Code: its state in the status bar, ask and run skills on your code with the local models, and control the box.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "yauhenbichel",
   "license": "Apache-2.0",
   "engines": {
@@ -104,9 +104,14 @@
           "default": true,
           "description": "Send the header x-yllm-priority: interactive, so a gateway with a priority queue serves your requests before background work."
         },
+        "yserver.memory": {
+          "type": "boolean",
+          "default": false,
+          "description": "Let a gateway with memory add its stored notes to your questions. Off by default: for coding they are rarely relevant, and they can bring private paths into answers. Sends x-yllm-memory: off when false."
+        },
         "yserver.maxTokens": {
           "type": "number",
-          "default": 8000,
+          "default": 16000,
           "description": "Room for the answer, including the model's hidden reasoning."
         },
         "yserver.skillsDirs": {

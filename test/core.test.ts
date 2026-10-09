@@ -64,12 +64,13 @@ test("streaming against a fake gateway: text, hidden reasoning, queue time, prio
   });
   await new Promise<void>((r) => server.listen(0, "127.0.0.1", r));
   const port = (server.address() as any).port;
-  const s = { baseUrl: `http://127.0.0.1:${port}`, apiKey: "", model: "yserver", interactive: true, maxTokens: 100 };
+  const s = { baseUrl: `http://127.0.0.1:${port}`, apiKey: "", model: "yserver", interactive: true, memory: false, maxTokens: 100 };
   let text = ""; let thinking = 0;
   const r = await streamChat(s, [{ role: "user", content: "hi" }], (t) => { text += t; }, (c) => { thinking = c; });
   assert.equal(text, "Hello"); assert.equal(r.text, "Hello"); assert.equal(thinking, "let me think".length);
   assert.equal(r.queueMs, 1500); assert.equal(r.model, "m");
   assert.equal(seen["x-yllm-priority"], "interactive");
+  assert.equal(seen["x-yllm-memory"], "off");
   const st = await readState(s);
   assert.equal(st.resident, "m"); assert.equal(st.busy, 1);
   server.close();

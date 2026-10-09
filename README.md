@@ -35,7 +35,7 @@ The extension is not on the Marketplace yet. Build it:
 npm install
 npm test
 npm run package
-code --install-extension yserver-vscode-0.1.0.vsix
+code --install-extension yserver-vscode-0.1.1.vsix
 ```
 
 ## Settings
@@ -48,7 +48,8 @@ Search for "yserver" in VS Code's settings. Only `yserver.baseUrl` is required.
 | `yserver.apiKey` | API key, if the server asks for one |
 | `yserver.model` | Model name sent with each request |
 | `yserver.interactive` | Send `x-yllm-priority: interactive` (default on) |
-| `yserver.maxTokens` | Room for the answer, including a thinking model's hidden reasoning (default 8000) |
+| `yserver.memory` | Let a gateway with memory add its stored notes (default off: sends `x-yllm-memory: off`) |
+| `yserver.maxTokens` | Room for the answer, including a thinking model's hidden reasoning (default 16000) |
 | `yserver.skillsDirs` | Folders of skills (`<name>/SKILL.md`) |
 | `yserver.rulesDir` | Folder of Markdown rules (default `~/.continue/rules`) |
 | `yserver.sshHost` | SSH host of the server, for pausing services |
