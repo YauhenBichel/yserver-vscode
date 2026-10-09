@@ -12,6 +12,8 @@ export interface Settings {
   apiKey: string;
   model: string;
   interactive: boolean;
+  /** false: ask the gateway to leave its memory (the owner's notes) out of the prompt. */
+  memory: boolean;
   maxTokens: number;
 }
 
@@ -25,6 +27,7 @@ function headers(s: Settings): Record<string, string> {
   const h: Record<string, string> = { "content-type": "application/json" };
   h["authorization"] = `Bearer ${s.apiKey || "local"}`;
   if (s.interactive) h["x-yllm-priority"] = "interactive";
+  if (!s.memory) h["x-yllm-memory"] = "off";
   return h;
 }
 
