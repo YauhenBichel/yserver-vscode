@@ -10,7 +10,7 @@ let lastAnswer = "";
 function settings(): Settings {
   const c = vscode.workspace.getConfiguration("yserver");
   return { baseUrl: c.get("baseUrl", ""), apiKey: c.get("apiKey", ""), model: c.get("model", "yserver"),
-    interactive: c.get("interactive", true), maxTokens: c.get("maxTokens", 8000) };
+    interactive: c.get("interactive", true), memory: c.get("memory", false), maxTokens: c.get("maxTokens", 16000) };
 }
 
 function selection(): { code?: string; fileName?: string; language?: string } {
