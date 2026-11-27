@@ -2,7 +2,7 @@
 
 A VS Code extension that lets you ask questions about selected code, and run step-by-step skills on it, using your own self-hosted LLM server (llama.cpp, Ollama, vLLM or any OpenAI-compatible endpoint) instead of a cloud model.
 
-![Tests and packaging output for the extension](docs/demo.svg)
+![Tests and packaging output for the extension](docs/demo.png)
 
 This is real output from a clean checkout. The extension needs a running server to answer questions, so there is no screenshot of an answer here. The tests include a fake server that checks streaming, hidden reasoning, queue time and the priority header.
 
