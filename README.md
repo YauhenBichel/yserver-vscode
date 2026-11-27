@@ -22,7 +22,7 @@ DONE  Packaged: yserver-vscode-0.1.1.vsix (8 files, 16.46 KB)
 
 ## Quick start
 
-The extension is not on the VS Code Marketplace or Open VSX yet (checked 27 November 2026), so build it from source. You need Node.js 20 or newer and VS Code 1.90 or newer.
+The extension is not on the VS Code Marketplace or Open VSX yet (checked 27 November 2026), so build it from source. You need Node.js (CI uses 22) and VS Code 1.90 or newer.
 
 ```bash
 git clone https://github.com/YauhenBichel/yserver-vscode
