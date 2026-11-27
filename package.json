@@ -12,6 +12,19 @@
     "AI",
     "Other"
   ],
+  "keywords": [
+    "llm",
+    "local llm",
+    "self-hosted",
+    "openai-compatible",
+    "llama.cpp",
+    "ollama",
+    "vllm",
+    "ai coding assistant",
+    "chat",
+    "skills",
+    "agent skills"
+  ],
   "main": "./out/src/extension.js",
   "activationEvents": [
     "onStartupFinished"
@@ -165,5 +178,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/YauhenBichel/yserver-vscode"
+  },
+  "homepage": "https://github.com/YauhenBichel/yserver-vscode#readme",
+  "bugs": {
+    "url": "https://github.com/YauhenBichel/yserver-vscode/issues"
   }
 }
